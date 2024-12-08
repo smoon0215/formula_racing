@@ -18,6 +18,35 @@ body{
 h1, h2, h3, h4{
     font-family: "Chakra Petch" ;
 }
+.HeaderBar{
+    clip-path: polygon(0px 0px, 233px 0px, 170.5px 62.5px, 0px 62.5px);
+    background-color: rgb(255, 255, 255);
+}
+.LearnMoreChassis{
+    width:13vw;
+    text-align: center;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    margin-left: 3vw;
+    clip-path: polygon(0% 0%, 88% 0%, 126% 100%, 100% 97%, 0% 97%);
+    background-color: white;
+    font-family: Chakra Petch;
+    text-decoration: none;
+    color:#072b52;
+    z-index: 2;
+    font-weight: 1000;
+    font-size: 2vw;
+    position: relative;
+    margin-top: 10vh;
+    display: block;
+}
+.ChassisHeader{
+    font-family: Montserrat;
+    font-weight: 100;
+    margin-left: 3vw;
+}
 header{
     position: fixed;
     background-image: url(BannerBackground.png);
@@ -28,12 +57,52 @@ header{
     background-position: bottom 0px right -62.5px;
     top: 0px;
     z-index: 10;
-    /* background-color: rgba(7, 43, 82, 0); */
+    background-color: rgba(7, 43, 82, 0);
 
     animation: colorIn 1s forwards;
 
     display: grid;
-    grid-template-columns: 70px 175px auto;
+    grid-template-columns: 70px 233px auto;
+}
+
+#CarHover{
+    width: 0vw;
+    height: 50vh;
+    background-color:#1480f5;
+    margin-top: 13vh;
+    margin-left: 2vw;
+    transition: 1s ease;
+    overflow: hidden;
+    box-shadow: 10px 0px 30px #000000;
+    font-family: Montserrat;
+    font-weight: 100;
+    text-align: justify;
+    text-justify: inter-word;
+    box-sizing: border-box;
+}
+.CarHoverText{
+    margin-left: 3vw;
+    width: 25vw;
+}
+
+#car-imgContainer:hover #CarHover{
+    width: 45vw;
+}
+
+
+@keyframes headershadow{
+    5%{
+    box-shadow: 0px 5px 98px black;
+    height: 40px
+    }
+    100%{
+    box-shadow: 0px 5px 98px black;
+    height: 40px 
+    }
+}
+
+.headerbottom-scrolled {
+    transform: translateY(-20px); /* Moves the header up slightly */
 }
 @keyframes colorIn{
     100%{background-color: #072b52;
@@ -41,12 +110,19 @@ header{
 }
 .logo{
     grid-column: 2/3;
-    width: 150px; /*Change to a relative value*/
+    width: 150px; 
     margin-top: -10px;
 }
 span{
     grid-column: 1/2;
     margin-top: 10px;
+}
+.menuicon{
+    background-color: white;
+    margin-top: 0px;
+    padding: 9.5px;
+    height: 62.5px;
+    box-sizing: border-box;
 }
 
 /* SIDEBAR NAVIGATION WITH OPACITY */
@@ -63,35 +139,92 @@ span{
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    right: 25px;
+    font-size: 36px;
+    margin-left: 0px;
+}
+.navMain{
+    width: 250px; 
+    height: 100%; /* 100% Full-height */
+    background-color: white;
+    box-shadow: 11px -75px 98px black;
+    transition: 5s ease-in; /* 0.5 second transition effect to slide in the sidenav */
+    
+}
+  /* The navigation menu links */
+  .navbutton {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgba(7, 43, 82, 1);
+    display: block;
+    transition: 0.3s;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 96% 97%, 0% 97%);
+    background-color: white;
+    height: 41px;
+    width: 211px;
+    margin-left: 0px;
+    font-family: Chakra Petch;
+}
+.navcontainer{
+    background-color: rgba(7, 43, 82, 1);
+}
+  /* When you mouse over the navigation links, change their color */
+  .navbutton:hover {
+    color: white;
+    background-color: rgba(7, 43, 82, 1);
 }
   
-  /* The navigation menu links */
-  .sidenav a {
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    top: 0;
+
+}
+.closebtn{
+top: 0;
+left: 0px;
+width: 251px;
+height: 100px;
+background-color: white;
+text-decoration: none;
+box-sizing: border-box;
+padding-left: 30px;
+font-size: 50px;
+color: rgba(7, 43, 82, 1);
+position: absolute;
+}
+
+.closebtn:hover{
+font-weight: 1000;
+}
+  
+/* The navigation menu links */
+/* .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-}
+} */
   
   /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+/* .sidenav a:hover {
     color: #f1f1f1;
-}
+} */
   
   /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
+/* .sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
+} */
 /* ANIMATION FOR HERO IMG */
 
 #CarAnim{
@@ -101,7 +234,7 @@ span{
     height: 103vh;
     right: -1500px;
     position: fixed;
-    z-index: 4;
+    z-index: 6;
     clip-path: polygon(0% 0%, 100% 0%, 100% 92%, -50% 92%, 0% 82%, 
     7vw 82%, 10vw 77%, 80% 77%, 90% 59%, 90% 23%, 80% 5%, 0% 5%);
     animation: slideTop 1.5s forwards;
@@ -113,7 +246,7 @@ span{
     width: 584px;
     height: 37px;
     margin-top: 79vh;
-    margin-left: 11vw;
+    margin-left: 18.5vw;
     font-family: Chakra Petch;
     text-align: center;
     padding: 0px;
@@ -136,7 +269,7 @@ span{
 
 .AnimBars{
     position:absolute;
-    z-index: 3;
+    z-index: 5;
     top: -13.2vh;
     left: 0px;
     width: 100vw;
@@ -182,32 +315,53 @@ span{
 #hero-box{
     width: 100vw;
     height: 102vh;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     text-align: center;
 }
-/* #car-img, #background-img{
-    position: absolute;
-} */
-#car-img{
-    margin-top: 20px;
-    width: 165vh;
-    height: 100vh;
-    left: 50px;
+#car-imgContainer{
+    margin-top: 11.5vh;
+    width: 65vw;
+    height: 85.5vh;
+    margin-left: 26.5vw;
     animation: shrinkcar 1.5s forwards;
     animation-delay: 1s;
+    overflow: hidden;
+    border-left: 1vw solid transparent;
+    transition: 0s;
+    transition-delay: 10s;
+    position: relative;
+}
+
+#car-imgContainer:hover #car-img{
+    border-left: 25vw solid transparent;
+
+}
+#car-img{
+    margin-top: -71vh;
+    margin-left: -20vw;
+    width: 84.6vw;
+    transition: 1s ease;
+    animation: shrinkcar 1.5s forwards;
+    border-left: 0.1vw solid transparent;
 }
 @keyframes shrinkcar{
     100%{
-        transform: scale(0.8,0.8) translateY(-4vh);
+        transform: scale(0.85,0.85) translateY(-4vh) translateX(2vw);
     }
 }
-.Aboutus{
-    margin-right: 4vw;
+#Aboutus{
+    width: 28vw;
     margin-left: 4vw;
     animation: FadeIn 2.5s forwards;
     animation-delay: 1s;
     opacity: 0%;
+    position: relative;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Encode Sans Condensed", Montserrat;
+    font-weight: 100;
+    margin-top: -7vh;
 }
 @keyframes FadeIn{
     100%{
@@ -217,6 +371,10 @@ span{
 .aboutus_home{
     grid-column: 1/2 ;
     margin-top: 200px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Encode Sans Condensed", Montserrat;
+    font-weight: 100;
 }
 .home_display{
     background-image: linear-gradient(#072b52, white);
@@ -261,16 +419,356 @@ span{
     text-align: center;
 }
 footer{
+    margin-top: -10px;
+    padding-top: 0px;
     background-image: linear-gradient(white, #072b52);
     height: 30vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-footer p{
+/* footer p{
     padding: 10px;
 }
 .socials{
     width: 100px;
     height: 100px;  
+} */
+.FooterTop{
+    grid-column: 1/6;
+    grid-row: 1;
+    width: 100%;
+    background-image: url(BannerBackground.png);
+    background-size: auto 101%;
+
+    background-position: bottom 0px right 50px;
 }
+
+.FooterItem{
+    grid-row: 3;
+    font-size: 33px;
+    text-decoration: none;
+    margin-top: -5px;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 100;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.FooterItem:hover{
+    transform: scale(1.1,1.1);
+}
+
+.footer_logo{
+    grid-row: 3;
+    grid-column: 1;
+    height: 100%;
+    width: 130px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5vw;
+}
+.socials{
+    grid-row: 3;
+    grid-column: 5;
+    height: 100%;
+    width: 105px;
+    background-image: url(SocialIcons.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-left: 5vw;
+}
+
+.TeamHolder{
+    background-color:#1480f5;
+    width: 100vw;
+    height: 42vw;
+    margin-top: -3vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border-bottom: 1vw solid #1480f5;
+    
+}
+.TeamText{
+    height: 100%;
+    grid-column: 1;
+    font-family: Montserrat;
+    font-weight: 100;
+    padding-right: 1vw;
+    padding-top: 1.1vw;
+    padding-left: 3vw;
+    text-align: justify;
+    text-justify: inter-word;
+    box-sizing: border-box;
+}
+
+.TeamText p{
+font-size: 1.4vw;
+margin-top: -1.5vw;
+}
+
+.TeamText h2{
+    font-family: Montserrat;
+    font-weight: 100;
+    text-align: justify;
+    text-justify: inter-word;
+    box-sizing: border-box;
+    font-size: 4vw;
+}
+.CarouselTeam{
+    margin-left: 4vw;
+    margin-top: -34.5vw;
+    grid-column: 2;
+    background-color: rgba(0, 0, 0, 0.456);
+    height: 36vw;
+    width: 65vw;
+    clip-path: polygon(0% 0%, 94% 0%, 100% 10%, 100% 90%, 94% 100%, 0% 100%);
+    overflow: hidden;
+}
+
+.CarouselContainer{
+    margin-top: -3.5vw;
+    width: 195vw;
+    height: 35vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.TeamHeader{
+    background-image: url(Carouselheader.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#072b52;
+    padding-left: 1vw;
+    box-sizing: border-box;
+    padding-top: 1vw;
+    font-size: 1.9vw;
+    grid-column: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.TeamHeader h3{
+margin-top: 0.7vw;
+}
+
+.LearnTeam{
+    box-sizing: border-box;
+    padding-top: 2.2vw;
+    background-color:#072b52;
+    font-family: chakra petch;
+    text-decoration: none;
+    font-size: 1.9vw;
+    display: block;
+    text-align: center;
+    font-weight: 1000;
+    grid-column: 2;
+    clip-path: polygon(0% 0%, 83% 0%, 100% 37%, 100% 100%, 0% 100%);
+    color: white;
+    transition: 0.2s ease;
+}
+
+.LearnTeam:hover{
+    background-color: white;
+    color:rgba(7, 43, 82, 1)
+}
+
+.TeamContainer{
+    margin-left: 5vw;
+    width: 58.3vw;
+    height: 6.5vw;
+    position: relative;
+    z-index: 3;
+    bottom: -5.2vw;
+    display: grid;
+    grid-template-columns: 43vw 1fr;
+    
+}
+
+
+.NextArrow{
+    grid-row: 1;
+    grid-column: 3;
+    background-image: url(NextArrow.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.PrevArrow{
+    grid-row: 1;
+    grid-column: 1;
+    background-image: url(PrevArrow.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.ArrowContainer{
+    margin-top: 19vw;
+    height: 7vw;
+    display: grid;
+    grid-template-columns: 8vw 57vw 8vw;
+    grid-template-rows: 1fr;
+    position: relative;
+    z-index: 4;
+}
+
+.PrevArrow:hover, .NextArrow:hover{
+    transform: scale(1.1,1.1);
+}
+
+.mySlides {display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  #PizzaTeam{
+    margin-left: -12%;
+    margin-top: -31%;
+    width: 152%;
+
+  }
+
+.Event{
+    padding: 4vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    height: 42vw;
+    box-sizing: border-box;
+}
+
+
+.EventText{
+    color:rgba(7, 43, 82, 1);
+    font-family: Montserrat;
+    font-weight: 200;
+    grid-column: 2;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.1vw;
+    padding-left: 3vw;
+    box-sizing: border-box;
+}
+
+.EventText h2{
+    font-family: Montserrat;
+    font-weight: 100;
+    font-size: 5vw;
+    margin-top: -2vw;
+}
+
+.EventText p{
+    margin-top: -2vw;
+}
+
+.EventHero{
+    grid-column: 1;
+    margin-top: -0.5vw;
+    clip-path: polygon(0% 12%, 7% 0%, 100% 0%, 100% 100%, 7% 100%, 0% 88%);
+    background-image: url(RacePic.png);
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.LearnMoreEvent{
+    margin-left: 2vw;
+    margin-top: 23vw;
+    width: 16vw;
+    height: 7vw;
+    box-sizing: border-box;
+    padding-top: 2vw;
+    background-color: #072b52;
+    font-family: chakra petch;
+    text-decoration: none;
+    font-size: 2.3vw;
+    display: block;
+    text-align: center;
+    font-weight: 1000;
+    grid-column: 2;
+    clip-path: polygon(0% 0%, 83% 0%, 100% 37%, 100% 100%, 0% 100%);
+    color: white;
+    transition: 0.2s ease;
+}
+
+.LearnMoreEvent:hover{
+    background-color: white;
+    color:#072b52;
+}
+
+
+
+
+/* Team Page */
+/* Three columns side by side */
+.column {
+    float: right;
+    width: 30.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Some left and right padding inside the container */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Clear floats */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
