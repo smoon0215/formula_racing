@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYU-Idaho Racing | Events & Media</title>
+    <title>BYU-Idaho Racing</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,29 +13,41 @@
     <div id="content">
     <header>
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">&times;</a>
-                <a href="index.html">HOME</a>
-                <a href="aboutus.html">ABOUT US</a>
-                <a href="team.html">MEET OUR TEAM</a>
-                <a href="media.html">MEDIA AND EVENT</a>
-                <a href="contact.html">CONTACT & FAQS</a>
+                <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">&times;</a>
+                <div class="navMain">
+                <div class="navcontainer">
+                    <a class="navbutton" href="index.html">HOME</a>
+                    <a class="navbutton" href="aboutus.html">ABOUT US</a>
+                    <a class="navbutton" href="team.html">MEET OUR TEAM</a>
+                    <a class="navbutton" href="media.html">MEDIA AND EVENT</a>
+                    <a class="navbutton" href="contact.html">CONTACT & FAQS</a>
+                </div>
+                
+            </div>
         </div>
-        <span onclick="openNav()"></span>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="navicon" src="images/Hamburger_icon.svg.png" alt=""></span>
+        <span class="menuicon" style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="navicon" src="images/Hamburger_icon.svg.png" alt=""></span>
 
-        <script>function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-          }
-          
-          /* Set the width of the side navigation to 0 */
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-          }
+        <script>
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "100%";
+                document.body.style.backgroundColor = "rgba(7,43,82,0.4)";
+            }
+
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.body.style.backgroundColor = "white";
+            }
         </script>
-        
-        <a href="index.html" id="logo_link">
-            <img class="logo" src="images/BYU_Idaho_Racing_Logo_V2.webp" alt="BYU-Idaho Racing Logo">
-        </a>
+        <div class="HeaderBar">
+            <a href="index.html" id="logo_link">
+                <img class="logo" src="images/BYU_Idaho_Racing_Logo_V2.webp" alt="BYU-Idaho Racing Logo">
+            </a>
+        </div>
     </header>
     
     
@@ -45,6 +57,7 @@
             <br><br>
             Teams compete in dynamic events such as acceleration, endurance, and efficiency, alongside static events focusing on design and cost analysis. Judging evaluates performance, innovation, safety, and teamwork, preparing students for careers in sustainable mobility and advanced engineering
         </p>
+        <a href="https://www.formula-hybrid.org/" target="_blank">Learn More!</a>
         
     </main>
     

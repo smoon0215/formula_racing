@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYU-Idaho Racing | About Us</title>
+    <title>BYU-Idaho Racing</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,45 +13,59 @@
     <div id="content">
     <header>
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">&times;</a>
-                <a href="index.html">HOME</a>
-                <a href="aboutus.html">ABOUT US</a>
-                <a href="team.html">MEET OUR TEAM</a>
-                <a href="media.html">MEDIA AND EVENT</a>
-                <a href="contact.html">CONTACT & FAQS</a>
+                <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">&times;</a>
+                <div class="navMain">
+                <div class="navcontainer">
+                    <a class="navbutton" href="index.html">HOME</a>
+                    <a class="navbutton" href="aboutus.html">ABOUT US</a>
+                    <a class="navbutton" href="team.html">MEET OUR TEAM</a>
+                    <a class="navbutton" href="media.html">MEDIA AND EVENT</a>
+                    <a class="navbutton" href="contact.html">CONTACT & FAQS</a>
+                </div>
+                
+            </div>
         </div>
-        <span onclick="openNav()"></span>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="navicon" src="images/Hamburger_icon.svg.png" alt=""></span>
+        <span class="menuicon" style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="navicon" src="images/Hamburger_icon.svg.png" alt=""></span>
 
-        <script>function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-          }
-          
-          /* Set the width of the side navigation to 0 */
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-          }
+        <script>
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "100%";
+                document.body.style.backgroundColor = "rgba(7,43,82,0.4)";
+            }
+
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.body.style.backgroundColor = "white";
+            }
         </script>
-        
-        <a href="index.html" id="logo_link">
-            <img class="logo" src="images/BYU_Idaho_Racing_Logo_V2.webp" alt="BYU-Idaho Racing Logo">
-        </a>
+        <div class="HeaderBar">
+            <a href="index.html" id="logo_link">
+                <img class="logo" src="images/BYU_Idaho_Racing_Logo_V2.webp" alt="BYU-Idaho Racing Logo">
+            </a>
+        </div>
     </header>
     
     
-    <main class="">
+    <main class="bodyHolder">
+        <h2>Our Start</h2>
         <p>
             The BYU-Idaho Formula Racing Team is a passionate and ambitious student-led design group based at Brigham Young University-Idaho. Each year, the team faces the exciting challenge of designing and building a compact, open-wheel race car.
             <br><br>
             Since its establishment, the BYU-Idaho Viking Formula Team has demonstrated a commitment to student-driven innovation and excellence. With a focus on advancing student experience in technology and design, the team has concentrated on electric vehicle development. Their participation in the Formula Hybrid + Electric competition showcases their dedication to motorsports and their pursuit of excellence in the field.
         </p>
-
+        <h2>Our Sponsors</h2>
         <p>
             Our partners and community supporters are essential to our success. The organizations listed on this page provide invaluable support to BYU-I Formula Racing through monetary, product, and service contributions. Since our founding, we have achieved remarkable accomplishments, made possible by the generosity of our sponsors and community partners.
             <br><br>
             We rely on these contributions to reach our goals each year. In return, we express our gratitude by showcasing our supporters' brands on our car, at public events, and across our online platforms. We are committed to fostering mutually beneficial partnerships and continue to work hard to highlight the value of their support.
         </p>
-        
+        <img class="sponsor_logo" src="images/Screenshot 2024-12-14 130247.png" alt="Grand Teton Battery">
+        <img class="sponsor_logo" src="images/ford_logo.png" alt="Ford">
     </main>
     
     <footer>
